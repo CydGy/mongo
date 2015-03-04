@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-singleton",
+  "description": "A node.js module for sharing MongoDB connections.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CydGy/mongodb-singleton.git"
+  },
+  "main": "./lib/mongodb-singleton.js",
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "dependencies": {
+    "mongodb": "^1.4.33"
+  }
+}
