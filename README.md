@@ -3,8 +3,20 @@
 ## API
 
 ```Javascript
-var mongo = require('mongo');
-var mongo = mongo('127.0.0.1', 27017, 'myDb', ['collection1', 'collection2']);
+var mongo = require('mongodb-singleton')(
+  '127.0.0.1',
+  27017,
+  'mywebsite',
+  ['users', 'admins']
+);
+
+mongo(function (err, collections) {
+
+  collections.users.findOne({}, function (err, doc) {
+
+  });
+
+});
 ```
 
 ## License
