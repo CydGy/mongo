@@ -3,17 +3,22 @@
 ## API
 
 ```Javascript
-var mongo = require('mongodb-singleton')(
+var mongo = require('mongo');
+
+// do it once
+mongo.set(
+  'myid',
   '127.0.0.1',
   27017,
-  'mywebsite',
+  'mydb',
   ['users', 'admins']
 );
 
-mongo(function (err, collections) {
-
-  collections.users.findOne({}, function (err, doc) {
-
+// put this where you want
+mongo.get('myid', function (err, mon) {
+  if (err) return console.error(err);
+  
+  mon.users.findOne({name: "Joe"}, function (err, doc) {
   });
 
 });
