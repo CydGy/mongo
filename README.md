@@ -24,6 +24,12 @@ mongo.get('myid', function (err, mon) {
 });
 ```
 
+## Installation
+
+```Shell
+npm install cydgy/mongo
+```
+
 ## License
 
 Mongo is licensed under the MIT license.
