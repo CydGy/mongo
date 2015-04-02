@@ -2,6 +2,8 @@
 
 ## API
 
+### Example
+
 ```Javascript
 var mongo = require('mongo');
 
@@ -12,7 +14,14 @@ mongo.set(
   27017,
   'mydb',
   ['users', 'admins']
-);
+function (err) {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  } else {
+    console.log('myid has been set');
+  }
+});
 
 // put this where you want
 mongo.get('myid', function (err, mon) {
@@ -23,6 +32,22 @@ mongo.get('myid', function (err, mon) {
 
 });
 ```
+
+### mongo.set(id, host, port, dbName, collectionsNames, callback)
+* `id` String – The reference to your MongoDB connection.
+* `host` String
+* `port` Number
+* `dbName` String
+* `collectionsNames` Array – The list of the collections you want to open.
+* `callback` Function
+
+The callback is passed one argument `(err)`.
+
+### mongo.get(id, callback)
+* `id` String – The reference to your MongoDB connection.
+* `callback` Function
+
+The callback is passed two arguments `(err, myMongoConnection)`.
 
 ## Installation
 
