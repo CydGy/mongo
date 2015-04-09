@@ -14,7 +14,7 @@ mongo.set(
   27017,
   'mydb',
   ['users', 'admins']
-function (err) {
+function (err, mon) {
   if (err) {
     console.error(err);
     process.exit(1);
@@ -41,7 +41,7 @@ mongo.get('myid', function (err, mon) {
 * `collectionsNames` Array – The list of the collections you want to open.
 * `callback` Function
 
-The callback is passed one argument `(err)`.
+The callback is passed two arguments `(err, myMongoConnection)`.
 
 ### mongo.get(id, callback)
 * `id` String – The reference to your MongoDB connection.
